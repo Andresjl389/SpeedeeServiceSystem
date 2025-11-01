@@ -5,7 +5,8 @@ from repositories.kitchen_config import get_by
 from repositories.kitchen_type import get_type_by_id
 
 # Configura tu clave API una vez
-genai.configure(api_key="AIzaSyDJZ6xQdUuxyF_uvqKiJfZV0lgXC6xofdQ")
+# genai.configure(api_key="AIzaSyDJZ6xQdUuxyF_uvqKiJfZV0lgXC6xofdQ")
+genai.configure(api_key="AIzaSyChdC7ziaPDPFvEi79X6xzp0SIy-EGRATY")
 
 
 def send_message_to_ai(user_id: UUID, config_id: UUID, db: Session):
@@ -30,7 +31,7 @@ def send_message_to_ai(user_id: UUID, config_id: UUID, db: Session):
     )
 
     # Crear instancia del modelo
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("models/gemini-2.5-flash")
 
     # Generar contenido
     response = model.generate_content(prompt)
